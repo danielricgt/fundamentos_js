@@ -27,3 +27,5 @@ const saludo = (c + d);
 c= 'hola de nuevo';
 
 var miNombre = 'Daniel';
+
+var outerWidht =  10000;
