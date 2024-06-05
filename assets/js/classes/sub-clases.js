@@ -14,7 +14,7 @@ class Persona {
   frase = "";
   comida = " ";
   // Constructor
-  constructor(nombre = "Daniel", codigo = 200, frase = "Hola") {
+  constructor(nombre = 'Sin Nombre', codigo= 'Sin codigo', frase= 'sin frase') {
     this.nombre = nombre;
     this.codigo = codigo;
     this.frase = frase;
@@ -47,29 +47,22 @@ const spiderman = new Persona(
   "Spiderman",
   "Un poder conlleva una gran responsabilidad"
 );
-const ironman = new Persona("Tony Stark", "Ironman", "Soy Ironman");
 
-spiderman.quienSoy();
-ironman.quienSoy();
+class Heroe extends Persona {
+    
+    clan = 'sin clan';
+    constructor(nombre, codigo, clase){
+        super(nombre, codigo, clase);
+        this.clan = 'los avengers';
+        this.comida = 'Pasta';
+    }
 
-spiderman.miFrase();
+    quienSoy(){
+        console.log(`soy  ${this.nombre} de los ${this.clan}`);
+        super.quienSoy();
+    }
+}
 
-const suma = (a, b) => {
-  return a + b;
-};
-
-const resultado = suma(3, 4);
-
-spiderman.comidaFavorita = "el pie de la tia may";
-// spiderman.comida = 'dunde verde';
-
-console.log(spiderman, ironman);
-
-console.log(spiderman.getComidaFavorita);
-
-console.log(Persona.getConteo);
-
-Persona.mensaje();
-
-Persona.propiedadExterna = console.log('hola mundo');
-console.log(Persona);
+const spiderman2 = new Heroe('Alexis','Thor','Martillo');
+console.log(spiderman2); 
+spiderman2.quienSoy();
